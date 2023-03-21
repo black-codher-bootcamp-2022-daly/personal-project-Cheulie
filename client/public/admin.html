@@ -24,18 +24,11 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>OhBaby.CakesLondon</title>
+    <title>Oh Baby Cakes London Library</title>
       
     
   </head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-      body {
-        background-image:url("TCK.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-    </style>
   <body>
     <nav>
       <ul>
@@ -49,15 +42,56 @@
           <a href ="contact.html"> Contact</a>
         </li>
         <li>
-          <a href ="admin.html"> Admin</a>
-        </li>
+            <a href ="admin.html"> Admin</a>
+          </li>
+        <li>
+            <a> Oh Baby Cakes London</a>
+          </li>
       </ul>
     </nav>
-    <h1 style = color:black >Oh Baby Cakes London Cake Library</h1>
-    <p>Check out our <a href="about.html">about page</a> to learning more about us</p>
-    <p>Or speak to us directly on social media (using the icons below or using the form on the <a href="contact.html">contact page</a></p>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <h1 style= color:aquamarine >About Us</h1>
+    <p>Edit cake database here</p>
+    <p>Add cakes</p>
+    <input id="title">title</input>
+    <input id="description">description</input>
+    <input id="summary">summary</input>
+    <button onclick="send();">submit</button>
+    <script>
+      function send () {
+          var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+          xmlhttp.open("POST", "http://localhost:8080/api/profile");
+          xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+          xmlhttp.send(JSON.stringify(  {
+            "title": document.getElementById("title").value,
+            "description": document.getElementById("description").value,
+            "summary": document.getElementById("summary").value
+        }));
+       }
+
+       
+    </script>
+
+<p>Delete cakes</p>
+<input id="title">title</input>
+<input id="description">description</input>
+<input id="summary">summary</input>
+<button onclick="send();">submit</button>
+<script>
+  function send () {
+      var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+      xmlhttp.open("DELETE", "http://localhost:8080/api/profile");
+      xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xmlhttp.send(JSON.stringify(  {
+        "title": document.getElementById("title").value,
+        "description": document.getElementById("description").value,
+        "summary": document.getElementById("summary").value
+    }));
+   }
+
+   
+</script>
+    <p>Go back to the <a href="index.html">homepage</a></p>
+    
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -68,27 +102,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-        </li>
-      </ul>
-      <footer>
-        <ul>
-          <li>
-            <a href="https://facebook.com"><img src="facebook.jpeg" alt="facebook logo" width="50" height ="50"></a>
-          </li>
-          <li>
-            <a href="https://instagram.com"><img src="instagram.jpeg" alt="instagram logo" width="50" height ="50"></a>
-          </li>
-          <li>
-            <a href="https://tiktok.com/@ohbaby.cakeslondon"><img src="ticktock.png" alt="tictok logo" width="50" height ="50"></a>
-          </li>
-          <li>
-            <a href="mailto:ohbaby.cakeslondon@gmail.com">
-              <img src="email.png" alt="email icon" width="50" height ="50"></a>
-          </li>
-        </ul>
-      </footer>
 
 
-
-</body>
+  </body>
 </html>

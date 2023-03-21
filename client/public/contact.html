@@ -29,13 +29,6 @@
     
   </head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-      body {
-        background-image:url("TCK.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-    </style>
   <body>
     <nav>
       <ul>
@@ -53,24 +46,20 @@
         </li>
       </ul>
     </nav>
-    <h1 style = color:black >Oh Baby Cakes London Cake Library</h1>
-    <p>Check out our <a href="about.html">about page</a> to learning more about us</p>
-    <p>Or speak to us directly on social media (using the icons below or using the form on the <a href="contact.html">contact page</a></p>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <h1 style= color:aquamarine >Contact us at Oh Baby Cakes London</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-        </li>
-      </ul>
-      <footer>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <footer>
         <ul>
           <li>
             <a href="https://facebook.com"><img src="facebook.jpeg" alt="facebook logo" width="50" height ="50"></a>
@@ -79,7 +68,7 @@
             <a href="https://instagram.com"><img src="instagram.jpeg" alt="instagram logo" width="50" height ="50"></a>
           </li>
           <li>
-            <a href="https://tiktok.com/@ohbaby.cakeslondon"><img src="ticktock.png" alt="tictok logo" width="50" height ="50"></a>
+            <a href="https://tiktok.com"><img src="ticktock.png" alt="tictok logo" width="50" height ="50"></a>
           </li>
           <li>
             <a href="mailto:ohbaby.cakeslondon@gmail.com">
@@ -88,7 +77,5 @@
         </ul>
       </footer>
 
-
-
-</body>
+  </body>
 </html>

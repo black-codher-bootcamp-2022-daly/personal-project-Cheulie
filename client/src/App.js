@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Contact from './contact';
 
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
@@ -21,10 +22,10 @@ function App() {
     return (
       <li key={user._id}>
         <h3>
-          {`${user.first_name} 
-          ${user.last_name}`}
+          {`${user.title} 
+          ${user.description}`}
         </h3>
-        <p>{user.location}</p>
+        <p>{user.summary}</p>
       </li>
     );
   };
@@ -35,7 +36,7 @@ function App() {
         {profiles && profiles.length > 0 ? (
           profiles.map((profile) => renderProfile(profile))
         ) : (
-          <p>No profiles found</p>
+          <p>No Cakes found</p>
         )}
       </ul>
     </div>

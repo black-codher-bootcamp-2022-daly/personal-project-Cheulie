@@ -33,76 +33,51 @@
     <nav>
       <ul>
         <li>
-          <a href ="index.html"> Home</a>
+            <a href ="about.html"> About</a>
         </li>
         <li>
-          <a href ="about.html"> About</a>
+          <a href ="index.html"> Library</a>
         </li>
         <li>
           <a href ="contact.html"> Contact</a>
         </li>
         <li>
             <a href ="admin.html"> Admin</a>
-          </li>
-        <li>
-            <a> Oh Baby Cakes London</a>
-          </li>
+        </li>
+        <li> 
+            <a href="editdatabase.html">
+                <img src="/images/OBCL.png" alt="OhBaby.CakesLondon logo" width="75" height ="75"></a>
+        </li>
       </ul>
     </nav>
-    <h1 style= color:aquamarine >About Us</h1>
-    <p>Edit cake database here</p>
-    <p>Add cakes</p>
-    <input id="title">title</input>
-    <input id="description">description</input>
-    <input id="summary">summary</input>
-    <button onclick="send();">submit</button>
-    <script>
-      function send () {
-          var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-          xmlhttp.open("POST", "http://localhost:8080/api/profile");
-          xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-          xmlhttp.send(JSON.stringify(  {
-            "title": document.getElementById("title").value,
-            "description": document.getElementById("description").value,
-            "summary": document.getElementById("summary").value
-        }));
-       }
+    <br><br><br>
+    <h1 style="color:aquamarine">Contact Us</h1>
+    <form action="action_page.php" method="post">
+        <div class="imgcontainer">
+          <img src="/images/OBCL.png" alt="logo" class="avatar" width="500" height="500">
+        </div>
+      
+        <div class="container">
+          <label for="name"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="name" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+      
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+      
 
-       
-    </script>
-
-<p>Delete cakes</p>
-<input id="title">title</input>
-<input id="description">description</input>
-<input id="summary">summary</input>
-<button onclick="send();">submit</button>
-<script>
-  function send () {
-      var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-      xmlhttp.open("DELETE", "http://localhost:8080/api/profile");
-      xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      xmlhttp.send(JSON.stringify(  {
-        "title": document.getElementById("title").value,
-        "description": document.getElementById("description").value,
-        "summary": document.getElementById("summary").value
-    }));
-   }
 
    
-</script>
-    <p>Go back to the <a href="index.html">homepage</a></p>
-    
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-
-
   </body>
 </html>

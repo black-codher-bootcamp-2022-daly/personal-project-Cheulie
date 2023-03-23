@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Contact from './contact';
+import Contact from "./contact";
 
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
@@ -26,6 +26,8 @@ function App() {
           ${user.description}`}
         </h3>
         <p>{user.summary}</p>
+        <img src={user.image} width="400" height="400"></img>
+        <button onclick="deleteCake('{user._id});">Delete</button>
       </li>
     );
   };

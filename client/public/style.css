@@ -1,3 +1,10 @@
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+}
+
 nav ul {
     justify-content: space-between;
     list-style-type: none;
@@ -63,3 +70,5 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+
+

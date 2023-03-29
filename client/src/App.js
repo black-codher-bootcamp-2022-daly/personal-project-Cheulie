@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from "react";
-import Contact from "./contact";
 
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
 
 function App() {
   const [profiles, setProfiles] = useState(null);
+
+  function deleteCake(event) {
+    const id = event.target.dataset["id"];
+    var xmlhttp = new XMLHttpRequest(); // new HttpRequest instance
+    xmlhttp.open("DELETE", "http://localhost:8080/api/profile/" + id);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xmlhttp.send(
+      JSON.stringify({
+        title: document.getElementById("title").value,
+      })
+    );
+  }
 
   useEffect(() => {
     async function getProfiles() {
@@ -20,15 +31,19 @@ function App() {
 
   const renderProfile = (user) => {
     return (
-      <li key={user._id}>
-        <h3>
-          {`${user.title} 
+      <div>
+        <li key={user._id}>
+          <h3>
+            {`${user.title} 
           ${user.description}`}
-        </h3>
-        <p>{user.summary}</p>
-        <img src={user.image} width="400" height="400"></img>
-        <button onclick="deleteCake('{user._id});">Delete</button>
-      </li>
+          </h3>
+          <p>{user.summary}</p>
+          <img src={user.image} width="400" height="400"></img>
+          {/* <button data-id={user._id} onClick={deleteCake}> */}
+            {/* Delete */}
+          {/* </button> */}
+        </li>
+      </div>
     );
   };
 

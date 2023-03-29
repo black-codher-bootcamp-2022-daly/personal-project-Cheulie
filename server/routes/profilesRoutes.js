@@ -30,7 +30,7 @@ const profileRoutes = (app) => {
 
   app.delete(`/api/profile/:id`, async (req, res) => {
     const { id } = req.params;
-
+    console.log("ID for deletion:",id)
     const profile = await Profile.findByIdAndDelete(id);
 
     return res.status(202).send({
